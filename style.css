@@ -109,9 +109,14 @@ footer #copyright {
   margin-top: 130px;
 }
 
-::selection {
+h1::selection {
   color: #222;
   background-color: #ffff33;
+}
+
+::selection {
+  color: #222;
+  background-color: #fff;
 }
 
 /* media queries */
