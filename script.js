@@ -21,4 +21,7 @@ setInterval(function () {
 var today = new Date();
 var year = today.getFullYear();
 var copyright = document.getElementById("copyright");
-copyright.innerHTML = "&copy Nijanthan Elangovan " + year;
+copyright.innerHTML =
+  "&copy Nijanthan Elangovan " +
+  year +
+  " | hi@njthnelvgn.com | @code.is.poetry";
