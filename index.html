@@ -83,5 +83,44 @@
       </footer>
     </div>
     <script src="script.js"></script>
+    <script>
+      var url =
+        "https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?37869";
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = url;
+      var options = {
+        enabled: true,
+        chatButtonSetting: {
+          backgroundColor: "#ff3",
+          ctaText: "Hey, what's up?",
+          borderRadius: "25",
+          marginLeft: "0",
+          marginRight: "20",
+          marginBottom: "20",
+          ctaIconWATI: true,
+          position: "right",
+        },
+        brandSetting: {
+          brandName: "Nijanthan",
+          brandSubTitle: "undefined",
+          brandImg: "https://njthnelvgn.com/favicon.png",
+          welcomeText:
+            "Hey, what's up? Fancy seeing you here.\n Need something, or just chilling? ",
+          messageText: "Hello👋",
+          backgroundColor: "#ff3",
+          ctaText: "Say Hello!",
+          borderRadius: "25",
+          autoShow: false,
+          phoneNumber: "918681828144",
+        },
+      };
+      s.onload = function () {
+        CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName("script")[0];
+      x.parentNode.insertBefore(s, x);
+    </script>
   </body>
 </html>
