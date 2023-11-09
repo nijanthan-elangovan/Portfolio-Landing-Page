@@ -1,126 +1,113 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap);
+.container,
 body {
-  background-image: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=1.25&auto=format&fit=crop&w=1500&h=1001&q=80&cs=tinysrgb&crop=);
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.name,
+body {
+  font-size: 30px;
+}
+.description,
+body {
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+.container,
+.tools,
+body {
+  width: 100%;
+}
+body {
+  background-image: url(https://res.cloudinary.com/dp0a9hsoi/image/upload/dpr_auto,f_auto,fl_aavif.awebp,q_auto/v1699505000/photo-1521907152322-60a3ab536b7a_mnzbbb.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  font-family: "IBM Plex Sans", sans-serif !important;
-  font-size: 30px;
   margin: 0;
-  width: 100%;
-  min-height: 100vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
 }
-
 a {
   text-decoration: none;
 }
-
 .container {
-  min-height: 100vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   background: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .box,
 .description,
-.tools,
-.find-me {
+.find-me,
+.tools {
   align-self: center;
 }
-
 .name {
   color: #fff;
-  font-size: 30px;
   margin-top: 2%;
   text-align: center;
   font-weight: 900;
   letter-spacing: 10px;
   padding: 0 100px;
 }
-
-.description {
+.description,
+.tools {
   color: #eee;
   opacity: 0.8;
-  font-weight: bold;
-  margin-top: 2%;
   text-align: center;
-  font-family: "IBM Plex Sans", sans-serif !important;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
 }
-
+.description {
+  font-weight: 700;
+  margin-top: 2%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.find-me,
 .tools {
   margin-top: 20px;
-  color: #eee;
-  opacity: 0.8;
-  text-align: center;
   display: flex;
-  width: 100%;
 }
-
 .languages {
   flex: 1;
   min-height: 10vh;
   width: 50%;
 }
-
 .find-me {
   font-size: 70px;
-  margin-top: 20px;
-  display: flex;
   flex-direction: row;
   height: 70px;
 }
-
 .find-me a {
   color: #fff;
-  transition: all 0.5s;
+  transition: 0.5s;
 }
-
 .find-me a:hover {
   color: #000;
   opacity: 0.8;
   font-size: 100px;
-  transition: all 0.5s;
+  transition: 0.5s;
 }
-
 footer {
   font-size: 12px;
   color: #fff;
   margin-top: 30px;
   text-align: center;
 }
-
 footer #copyright {
   margin-top: 130px;
 }
-
 h1::selection {
   color: #222;
-  background-color: #ffff33;
+  background-color: #ff3;
 }
-
 ::selection {
   color: #222;
   background-color: #fff;
 }
-
-/* media queries */
-
 @media only screen and (max-width: 480px) {
   .name {
     font-size: 20px;
