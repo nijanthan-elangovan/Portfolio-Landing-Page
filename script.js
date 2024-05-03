@@ -71,7 +71,7 @@ var getStarted = function() {
 }
 
 var init = function() {
-  setInterval(function() {getStarted()}, 2000);
+  setInterval(function() {getStarted()}, 3000);
 }
 
 init();
