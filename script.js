@@ -24,7 +24,7 @@ var copyright = document.getElementById("copyright");
 copyright.innerHTML =
   "&copy" +
   year +
-  " | hi@njthnelvgn.com |IG- @code.is.poetry | 📸Unsplash - " +
+  " | hi@njthnelvgn.com |IG- @code.is.poetry | Image - " +
   "Jehu Christan";
 
 
