@@ -24,7 +24,7 @@ var copyright = document.getElementById("copyright");
 copyright.innerHTML =
   "&copy" +
   year +
-  " | hi@njthnelvgn.com | IG- @code.is.poetry 
+  " | hi@njthnelvgn.com | IG- @code.is.poetry "
 
 
 var isLast = function(word) {
