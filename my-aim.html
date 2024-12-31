@@ -105,14 +105,15 @@
       <button class="play-button" id="playButton"></button>
       <button class="replay-button" id="replayButton"></button>
     </div>
-    <a href="http://instagr.am/p/" class="scroll-button"
-      >Enough wasting your time, go back to doom scrolling</a
-    >
+    <button class="scroll-button" id="backButton">
+      Enough wasting your time, go back to doom scrolling
+    </button>
 
     <script>
       const playButton = document.getElementById("playButton");
       const replayButton = document.getElementById("replayButton");
       const video = document.getElementById("funnyVideo");
+      const backButton = document.getElementById("backButton");
 
       playButton.addEventListener("click", () => {
         video.style.display = "block";
@@ -128,6 +129,14 @@
         replayButton.style.display = "none";
         video.currentTime = 0;
         video.play();
+      });
+
+      backButton.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "https://www.instagram.com";
+        }
       });
     </script>
   </body>
