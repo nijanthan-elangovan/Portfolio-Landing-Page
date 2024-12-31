@@ -12,27 +12,17 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: linear-gradient(90deg, #00ff00, #1d1d1d, #00ff00);
-        background-size: 300% 300%;
-        animation: backgroundShift 5s infinite;
+        overflow: hidden;
+        background: #000;
         color: #fff;
         font-family: "Minecraftia", Arial, sans-serif;
         text-align: center;
-      }
-      @keyframes backgroundShift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
+        position: relative;
       }
       h1 {
         margin-bottom: 20px;
         font-size: 2rem;
+        z-index: 2;
       }
       .video-container {
         position: relative;
@@ -40,7 +30,7 @@
         max-width: 640px;
         aspect-ratio: 16 / 9;
         background: #000;
-        box-shadow: 0 0 20px #00ff00;
+        z-index: 2;
       }
       video {
         width: 100%;
@@ -88,9 +78,26 @@
         cursor: pointer;
         text-decoration: none;
         box-shadow: 0 0 10px #00ff00;
+        z-index: 2;
       }
       .scroll-button:hover {
         background: rgba(0, 255, 0, 1);
+      }
+      .falling-block {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #00ff00;
+        box-shadow: 0 0 10px #00ff00;
+        animation: fall 5s linear infinite;
+      }
+      @keyframes fall {
+        from {
+          transform: translateY(-50px);
+        }
+        to {
+          transform: translateY(100vh);
+        }
       }
     </style>
     <link
@@ -132,12 +139,23 @@
       });
 
       backButton.addEventListener("click", () => {
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          window.location.href = "instagram://app";
-        }
+        window.location.href = "instagram://app";
       });
+
+      // Generate falling blocks
+      function createFallingBlock() {
+        const block = document.createElement("div");
+        block.className = "falling-block";
+        block.style.left = Math.random() * 100 + "vw";
+        block.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(block);
+
+        block.addEventListener("animationend", () => {
+          block.remove();
+        });
+      }
+
+      setInterval(createFallingBlock, 300);
     </script>
   </body>
 </html>
