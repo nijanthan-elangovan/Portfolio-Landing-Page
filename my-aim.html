@@ -8,23 +8,37 @@
       body {
         margin: 0;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #1d1d1d;
-        background-image: url("https://i.imgur.com/Lu2IqNC.png");
-        background-size: cover;
-        background-repeat: repeat;
+        background: linear-gradient(90deg, #00ff00, #1d1d1d, #00ff00);
+        background-size: 300% 300%;
+        animation: backgroundShift 5s infinite;
         color: #fff;
         font-family: "Minecraftia", Arial, sans-serif;
-        overflow: hidden;
+        text-align: center;
+      }
+      @keyframes backgroundShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
       }
       .video-container {
         position: relative;
         width: 100%;
         max-width: 640px;
         aspect-ratio: 16 / 9;
-        border: 5px solid #00ff00;
         background: #000;
         box-shadow: 0 0 20px #00ff00;
       }
@@ -63,6 +77,21 @@
       .replay-button {
         display: none;
       }
+      .scroll-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: rgba(0, 255, 0, 0.8);
+        border: none;
+        border-radius: 5px;
+        color: #000;
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 0 10px #00ff00;
+      }
+      .scroll-button:hover {
+        background: rgba(0, 255, 0, 1);
+      }
     </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Minecraftia&display=swap"
@@ -70,11 +99,15 @@
     />
   </head>
   <body>
+    <h1>My New Year Resolution Is</h1>
     <div class="video-container">
       <video id="funnyVideo" src="files/my-aim.mp4" preload="metadata"></video>
       <button class="play-button" id="playButton"></button>
       <button class="replay-button" id="replayButton"></button>
     </div>
+    <a href="http://instagr.am/p/" class="scroll-button"
+      >Enough wasting your time, go back to doom scrolling</a
+    >
 
     <script>
       const playButton = document.getElementById("playButton");
